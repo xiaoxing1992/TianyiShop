@@ -1,5 +1,10 @@
 package tianyishop.weiwei.com.tianyishop.app;
 
+import android.app.ActionBar;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -50,6 +55,17 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+        //该效果是只有5.0（API 21）及以上系统才支持
+        if (Build.VERSION.SDK_INT >= 21) {
+            //获得Activity中的 decorView
+        /*    View decorView = getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            //设置属性
+            decorView.setSystemUiVisibility(option);*/
+            //将状态栏变为透明
+            getWindow().setStatusBarColor(Color.parseColor("#FCFCFC"));
+        }
         findViews();
 
         initEvents();
@@ -57,7 +73,7 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     private void findViews() {
-        main_viewpager = (NoScrollViewPager) findViewById(R.id.main_viewpager);
+        //    main_viewpager = (NoScrollViewPager) findViewById(R.id.main_viewpager);
         main_rb = (RadioGroup) findViewById(R.id.main_rb);
         buttom_home_rb_id = (RadioButton) findViewById(R.id.buttom_home_rb_id);
         buttom_classify_rb_id = (RadioButton) findViewById(R.id.buttom_classify_rb_id);
@@ -83,33 +99,80 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         fragList.add(communityFragment);
         fragList.add(shoppingFragment);
         fragList.add(userFragment);
-
-        main_viewpager.setAdapter(new MyMainPagerAdapter(getSupportFragmentManager()));
+        manager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = manager.beginTransaction();
+        fragmentTransaction.add(R.id.main_fl, homeFragment);
+        fragmentTransaction.add(R.id.main_fl, classifyFragment);
+        fragmentTransaction.add(R.id.main_fl, communityFragment);
+        fragmentTransaction.add(R.id.main_fl, shoppingFragment);
+        fragmentTransaction.add(R.id.main_fl, userFragment);
+        fragmentTransaction.show(homeFragment);
+        fragmentTransaction.hide(classifyFragment);
+        fragmentTransaction.hide(communityFragment);
+        fragmentTransaction.hide(shoppingFragment);
+        fragmentTransaction.hide(userFragment);
+        fragmentTransaction.commit();
+        //  main_viewpager.setAdapter(new MyMainPagerAdapter(getSupportFragmentManager()));
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttom_home_rb_id:
-                main_viewpager.setCurrentItem(0);
+                FragmentTransaction fragmentTransaction = manager.beginTransaction();
+                fragmentTransaction.show(homeFragment);
+                fragmentTransaction.hide(classifyFragment);
+                fragmentTransaction.hide(communityFragment);
+                fragmentTransaction.hide(shoppingFragment);
+                fragmentTransaction.hide(userFragment);
+                fragmentTransaction.commit();
+                // main_viewpager.setCurrentItem(0);
                 break;
             case R.id.buttom_classify_rb_id:
-                main_viewpager.setCurrentItem(1);
+                FragmentTransaction fragmentTransaction2 = manager.beginTransaction();
+                fragmentTransaction2.show(classifyFragment);
+                fragmentTransaction2.hide(homeFragment);
+                fragmentTransaction2.hide(communityFragment);
+                fragmentTransaction2.hide(shoppingFragment);
+                fragmentTransaction2.hide(userFragment);
+                fragmentTransaction2.commit();
+                // main_viewpager.setCurrentItem(1);
                 break;
             case R.id.buttom_community_rb_id:
-                main_viewpager.setCurrentItem(2);
+                FragmentTransaction fragmentTransaction3 = manager.beginTransaction();
+                fragmentTransaction3.show(communityFragment);
+                fragmentTransaction3.hide(classifyFragment);
+                fragmentTransaction3.hide(homeFragment);
+                fragmentTransaction3.hide(shoppingFragment);
+                fragmentTransaction3.hide(userFragment);
+                fragmentTransaction3.commit();
+                // main_viewpager.setCurrentItem(2);
                 break;
             case R.id.buttom_shopping_rb_id:
-                main_viewpager.setCurrentItem(3);
+                FragmentTransaction fragmentTransaction4 = manager.beginTransaction();
+                fragmentTransaction4.show(shoppingFragment);
+                fragmentTransaction4.hide(classifyFragment);
+                fragmentTransaction4.hide(communityFragment);
+                fragmentTransaction4.hide(homeFragment);
+                fragmentTransaction4.hide(userFragment);
+                fragmentTransaction4.commit();
+                // main_viewpager.setCurrentItem(3);
                 break;
             case R.id.buttom_user_rb_id:
-                main_viewpager.setCurrentItem(4);
+                FragmentTransaction fragmentTransaction5 = manager.beginTransaction();
+                fragmentTransaction5.show(userFragment);
+                fragmentTransaction5.hide(classifyFragment);
+                fragmentTransaction5.hide(communityFragment);
+                fragmentTransaction5.hide(shoppingFragment);
+                fragmentTransaction5.hide(homeFragment);
+                fragmentTransaction5.commit();
+                // main_viewpager.setCurrentItem(4);
                 break;
         }
     }
 
 
-    class MyMainPagerAdapter extends FragmentPagerAdapter {
+  /*  class MyMainPagerAdapter extends FragmentPagerAdapter {
 
 
         public MyMainPagerAdapter(FragmentManager fm) {
@@ -125,6 +188,6 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         public int getCount() {
             return fragList.size();
         }
-    }
+    }*/
 
 }

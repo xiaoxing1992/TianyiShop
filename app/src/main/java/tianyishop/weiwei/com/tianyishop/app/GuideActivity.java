@@ -1,6 +1,8 @@
 package tianyishop.weiwei.com.tianyishop.app;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -49,6 +51,16 @@ public class GuideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_guide);
+        if (Build.VERSION.SDK_INT >= 21) {
+            //获得Activity中的 decorView
+            View decorView = getWindow().getDecorView();
+            int option =View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    |View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            //设置属性
+            decorView.setSystemUiVisibility(option);
+            //将状态栏变为透明
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
         boolean isFirst = SharedPfUtil.getSharedContent(this, "isFirst");
         if (isFirst) {
             startActivity(new Intent(GuideActivity.this, SplashActivity.class));
@@ -63,7 +75,22 @@ public class GuideActivity extends AppCompatActivity {
         initEvents();
         splash_point.getViewTreeObserver().addOnGlobalLayoutListener(new MyOnGlobalLayoutListener());
     }
-
+/*
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        //4.4（API 19）及以上系统才支持
+        if (hasFocus && Build.VERSION.SDK_INT >= 19) {
+            View decorView = getWindow().getDecorView();
+            decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }*/
 
     /**
      * 初始化数据，添加三个Fragment
