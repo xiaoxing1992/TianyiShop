@@ -9,18 +9,36 @@
         android:id="@+id/homefrag_title_il"
         layout="@layout/homefragment_title" />
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/home_frag_swip"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/home_frag_rcy"
-
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/home_frag_swip"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-        </android.support.v7.widget.RecyclerView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/home_frag_rcy"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <ImageView
+            android:id="@+id/goto_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ico_goto_top"
+            android:visibility="gone" />
+    </RelativeLayout>
 </LinearLayout>

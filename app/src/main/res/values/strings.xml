@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TianyiShop</string>
     <string name="homefragment_title_name">御泥坊VIP商城</string>
+    <string name="goodsinfo_title_name">商品详情</string>
 </resources>

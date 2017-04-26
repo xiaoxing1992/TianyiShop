@@ -1,7 +1,10 @@
 package tianyishop.weiwei.com.tianyishop.base;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -20,9 +23,16 @@ import okhttp3.OkHttpClient;
  */
 
 public class MyApplication extends Application {
+
+
+    private static MyApplication mContext;
+
+
     @Override
     public void onCreate() {
         super.onCreate();
+        this.mContext = this;
+        SDKInitializer.initialize(getApplicationContext());
         CookieJarImpl cookieJar = new CookieJarImpl(new PersistentCookieStore(getApplicationContext()));
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .cookieJar(cookieJar)
@@ -48,6 +58,11 @@ public class MyApplication extends Application {
 
         ImageLoader.getInstance().init(loaderConfiguration);
 
-
+        //  addLoginState();
     }
+
+    public static Context getContext() {
+        return mContext;
+    }
+
 }

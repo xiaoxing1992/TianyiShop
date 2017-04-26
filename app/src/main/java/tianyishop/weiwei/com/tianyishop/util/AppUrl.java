@@ -10,8 +10,11 @@ public class AppUrl {
     //首页
     public static String url_home = "http://m.yunifang.com/yunifang/mobile/home?random=84831&encode=9dd34239798e8cb22bf99a75d1882447";
 
+    public static String url_goodsinfo = "http://m.yunifang.com/yunifang/mobile/goods/detail?random=42187&encode=168d21c6d627072293fbbb0a44cc72e9&id=";
+
+
     //分类
-    public static String url_fenlei = "http://m.yunifang.com/yunifang/mobile/category/list?random=96333&encode=bf3386e14fe5bb0bcef234baebca2414";
+    public static String url_classify = "http://m.yunifang.com/yunifang/mobile/category/list?random=96333&encode=bf3386e14fe5bb0bcef234baebca2414";
 
     //按功效
     public static String url_gongxiao = "http://m.yunifang.com/yunifang/mobile/goods/getall?random=13819&encode=d58e53c4b9e24bd5ba276ba68f8e98ec&category_id=";
@@ -38,4 +41,6 @@ public class AppUrl {
     public static String url_kongyou = "http://m.yunifang.com/yunifang/mobile/goods/getall?random=50464&encode=789002e73efb3ab24ecd56d42df3ef49&category_id=19";
     //洁面乳
     public static String url_jiemianru = "http://m.yunifang.com/yunifang/mobile/goods/getall?random=24799&encode=ebe717bb1c72e105ca7d55d3ce463bab&category_id=24";
+
+    public static String url_ser = "http://192.168.191.1:8080";
 }

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context="tianyishop.weiwei.com.tianyishop.app.LoginPhoneActivity">
+
+    <include layout="@layout/log_reg_title" />
+
+
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/register_shape"
+        android:text="注册"
+        android:textColor="#FC6C88"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:id="@+id/yuedu_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/register_button"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/yuedu_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:button="@null"
+            android:drawableLeft="@drawable/checked_yuedu"
+            android:drawablePadding="8dp"
+            android:text="我已阅读并同意"
+            android:textColor="#666" />
+
+        <TextView
+            android:id="@+id/tiaokuan_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:text="使用条款和隐私政策"
+            android:textColor="#3A9BFF" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/regist_pwd_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_above="@id/yuedu_ll"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/white"
+        android:hint="密码"
+        android:paddingLeft="8dp"
+        android:textSize="15sp" />
+
+
+    <EditText
+        android:id="@+id/regist_account_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_above="@id/regist_pwd_edittext"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/white"
+        android:hint="手机号"
+        android:paddingLeft="8dp"
+        android:textSize="15sp" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/register_button"
+        android:src="@drawable/this_is_guanggao" />
+
+</RelativeLayout>
+

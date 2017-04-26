@@ -8,4 +8,9 @@
     <color name="bottomTextColorChecked">#FC6B87</color>
     <color name="colorThree">#00ffff</color>
     <color name="colorSi">#ff0000</color>
+    <color name="goodsInfoTitleColor">#000000</color>
+    <color name="goodsInfoSendColor">#FC6B87</color>
+    <color name="goodsInfoUnsendColor">#CFCDCE</color>
+    <color name="goodsInfosGiftColor">#FFE343</color>
+    <color name="goodsInfoNormalTextColor">#666</color>
 </resources>

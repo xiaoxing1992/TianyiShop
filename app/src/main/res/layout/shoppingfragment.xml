@@ -2,12 +2,126 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is ShoppingPagers"
-        android:textSize="22sp" />
+    <include layout="@layout/cart_title_layout" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#eee" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/cart_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#eeee" />
+
+
+        <include layout="@layout/empty_cart" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/ll_check_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <CheckBox
+                android:id="@+id/checkbox_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:button="@null"
+                android:drawableLeft="@drawable/goods_cart_checked_select"
+                android:drawablePadding="20dp"
+                android:padding="10dp"
+                android:paddingLeft="0dp"
+                android:text="全选"
+                android:textColor="#303235"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="总计:"
+                android:textColor="#FC6C88"
+                android:textSize="19sp" />
+
+            <TextView
+                android:id="@+id/tv_shopcart_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="￥0.00"
+                android:textColor="#FC6C88"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/btn_check_out"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/login_button_selector"
+                android:text="去结算"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/cb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:button="@null"
+                android:drawableLeft="@drawable/goods_cart_checked_select"
+                android:drawablePadding="20dp"
+                android:padding="10dp"
+                android:paddingLeft="0dp"
+                android:text="全选"
+                android:textColor="#303235"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/login_button_selector"
+                android:text="删除"
+
+                android:textColor="@android:color/white"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>

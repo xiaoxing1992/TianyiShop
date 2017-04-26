@@ -1,34 +1,28 @@
 package tianyishop.weiwei.com.tianyishop.app;
 
-import android.app.ActionBar;
-import android.content.res.Resources;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
-import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.baidu.mapapi.SDKInitializer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import tianyishop.weiwei.com.tianyishop.R;
 import tianyishop.weiwei.com.tianyishop.base.BaseFragment;
-import tianyishop.weiwei.com.tianyishop.classify.fragment.ClassifyFragment;
-import tianyishop.weiwei.com.tianyishop.community.fragment.CommunityFragment;
-import tianyishop.weiwei.com.tianyishop.home.fragment.HomeFragment;
-import tianyishop.weiwei.com.tianyishop.shopping.fragment.ShoppingFragment;
-import tianyishop.weiwei.com.tianyishop.user.fragment.UserFragment;
+import tianyishop.weiwei.com.tianyishop.fragment.classify.fragment.ClassifyFragment;
+import tianyishop.weiwei.com.tianyishop.fragment.community.fragment.CommunityFragment;
+import tianyishop.weiwei.com.tianyishop.fragment.home.fragment.HomeFragment;
+import tianyishop.weiwei.com.tianyishop.fragment.shopping.fragment.ShoppingFragment;
+import tianyishop.weiwei.com.tianyishop.fragment.user.fragment.UserFragment;
 import tianyishop.weiwei.com.tianyishop.view.NoScrollViewPager;
 
 public class

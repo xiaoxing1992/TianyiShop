@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_login"
+    tools:context="tianyishop.weiwei.com.tianyishop.app.LoginPhoneActivity">
+
+    <include layout="@layout/log_reg_title" />
+
+    <LinearLayout
+        android:id="@+id/wuyong_ll"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"></LinearLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/wuyong_ll"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/login_button_selector"
+        android:text="登录"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/forget_remember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/login_button"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:text="忘记密码" />
+
+    <EditText
+        android:id="@+id/pwd_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_above="@id/forget_remember"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/white"
+        android:hint="密码"
+        android:paddingLeft="8dp"
+        android:textSize="15sp" />
+
+
+    <EditText
+        android:id="@+id/account_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_above="@id/pwd_edittext"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@android:color/white"
+        android:hint="手机号"
+        android:paddingLeft="8dp"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_above="@id/account_edittext"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:textColor="#666">
+
+        <TextView
+            android:id="@+id/account_login_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/login_bianhuan_select"
+            android:gravity="center"
+            android:text="御泥坊账号登录"
+            android:textColor="@color/goodsinfo_textcolor_selector"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/phone_login_tv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/login_bianhuan_select"
+            android:gravity="center"
+            android:text="手机快速登录"
+            android:textColor="@color/goodsinfo_textcolor_selector"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/wuyong_ll"
+        android:src="@drawable/this_is_guanggao" />
+
+    <TextView
+        android:id="@+id/gaozhi_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="第三方快速登录用户不享受任何御泥坊会员权益"
+        android:textColor="#666"
+        android:textSize="14sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/gaozhi_tv"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/other_login_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第三方快速登录"
+            android:textColor="#FC6C88"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ico_big_right_red" />
+    </LinearLayout>
+</RelativeLayout>
