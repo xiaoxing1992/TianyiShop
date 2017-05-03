@@ -35,4 +35,5 @@ dependencies {
     compile 'com.zhy:magic-viewpager:1.0.1'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile 'com.squareup.okio:okio:1.7.0'
+    compile 'com.yanzhenjie:permission:1.0.5'
 }

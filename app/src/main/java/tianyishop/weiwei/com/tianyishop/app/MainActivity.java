@@ -6,10 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import com.baidu.mapapi.SDKInitializer;
 
@@ -165,7 +167,22 @@ MainActivity extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
+    //第二种方式
+    private long firstDownTime;
 
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            long nowTime = System.currentTimeMillis();
+            if (nowTime - firstDownTime > 2000) {
+                Toast.makeText(MainActivity.this, "再按一次退出", Toast.LENGTH_SHORT).show();
+                firstDownTime = nowTime;
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
   /*  class MyMainPagerAdapter extends FragmentPagerAdapter {
 
 

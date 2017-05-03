@@ -27,6 +27,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <!-- SD卡读取权限，用户写入离线定位数据 -->
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:name=".base.MyApplication"
@@ -64,7 +70,10 @@
         <activity android:name=".app.BannerWebViewActivity" />
         <activity android:name=".app.LoginPhoneActivity" />
         <activity android:name=".app.RegisterActivity" />
-        <activity android:name=".fragment.shopping.activity.AffirmActivity"></activity>
+        <activity android:name=".fragment.shopping.activity.AffirmActivity" />
+        <activity android:name=".fragment.home.activity.QrActivity" />
+        <activity android:name=".fragment.home.activity.MipcaActivityCapture"></activity>
+        <activity android:name=".fragment.home.activity.WebViewActivity" />
     </application>
 
 </manifest>

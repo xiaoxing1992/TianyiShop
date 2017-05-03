@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_qr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="tianyishop.weiwei.com.tianyishop.fragment.home.activity.QrActivity">
+
+    <ImageView
+        android:id="@+id/qr_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/qr_img"
+        android:layout_centerHorizontal="true"
+        android:text="喜欢的话可以推荐给你的朋友哦" />
+
+    <ImageView
+        android:id="@+id/qr_back_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/back_select"
+        android:padding="5dp" />
+</RelativeLayout>
